@@ -1,0 +1,51 @@
+doctype html
+html
+	head
+		title Main page
+		link(rel='stylesheet', href='lib/bootstrap/css/bootstrap.min.css')
+		link(rel='stylesheet', href='lib/bootstrap/css/bootstrap-theme.min.css')
+		link(rel='stylesheet', href='lib/joint/css/joint.min.css')
+		link(rel='stylesheet', href='css/index.css')
+		script(src='lib/requirejs/js/require.js', data-main='js/main.js')
+body
+	#paper
+	#top-utils
+		#mode.btn-group(data-toggle='buttons')
+			label.btn.btn-default.active
+				input(type='radio', name='options', autocomplete='off', value='edit', checked)
+				| Edit
+			label.btn.btn-default
+				input(type='radio', name='options', autocomplete='off', value='element')
+				| Add Element
+			label.btn.btn-default
+				input(type='radio', name='options', autocomplete='off', value='group')
+				| Add Group
+			label.btn.btn-default
+				input(type='radio', name='options', autocomplete='off', value='link')
+				| Link
+			label.btn.btn-default
+				input(type='radio', name='options', autocomplete='off', value='embed')
+				| Embed
+		.btn-group
+			button.btn.btn-primary#generate(type='button') Generate
+		.btn-group
+			button.btn.btn-danger#clear(type='button') Clear
+
+	#editor
+			a.close &times;
+			form.container-fluid#editor-form
+				.row
+					.col-xs-12
+						.form-group
+							label Title
+							input#title.input-sm.form-control(type='text', name='title')
+				.row
+					.col-xs-12
+						.form-group
+							label Description
+							textarea#descr.input-sm.form-control(name='descr')
+				.row
+					.col-xs-12
+						.form-group
+							button.btn.btn-block.btn-primary(type='submit') Save
+							button.remove.btn.btn-block.btn-danger(type='button') Remove
